@@ -58,96 +58,48 @@ Returns null if no dimensions can be detected.
 Tailor blueprint:
 
 fields:
-
     icon:
-
         label: Icon
-
         type: fileupload
-
         mode: image
-
         maxFiles: 1
-
-
 
 Twig:
 
 {% set dims = image\_dimensions(record.icon) %}
-
 {% if dims %}
-
     <span>{{ dims.width }} × {{ dims.height }}</span>
-
 {% endif %}
-
-
-
-
-
-* * *
-
 
 
 📂 Directory Structure
 ----------------------
-
 plugins/
-
 └─ depcore/
-
    └─ svgdimensions/
-
       ├── Plugin.php
-
       ├── composer.json
-
       ├── README.md
-
       └── CHANGELOG.md
-
-
-
-
-
 * * *
-
-
 
 🔍 How It Works
 ---------------
 
 ### Raster images
-
 OctoberCMS exposes their width/height directly from System\\Models\\File.
 
 ### SVG images
-
 OctoberCMS does not extract their dimensions.
 
 This plugin:
-
 1.  Detects if the file is an SVG
-
-
 2.  Reads and parses the file
-
-
 3.  Extracts width, height, or viewBox values
-
-
 4.  Returns clean integer dimensions
-
-
 
 All at runtime.
  No database writes, no schema changes.
-
-
-
-* * *
-
-
 
 📸 Example Output
 -----------------
@@ -164,9 +116,6 @@ svg\_dimensions(file)
 Returns dimensions for SVGs only
 image\_dimensions(file)
 Returns dimensions for both SVG and raster
-
-
-
 
 ❗ Troubleshooting
 -----------------
