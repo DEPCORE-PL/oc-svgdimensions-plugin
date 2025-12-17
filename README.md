@@ -1,22 +1,22 @@
 Depcore SVG Dimensions Plugin
 =============================
 
-Smart SVG dimension extraction for OctoberCMS — no database changes and fully Tailor compatible.
+Smart SVG dimension extraction for OctoberCMS, no database changes and fully Tailor compatible.
 
-OctoberCMS automatically stores dimensions for raster images (JPG, PNG, GIF, WebP).
- However, SVG images do not store width/height in the database.
- This plugin provides runtime helpers to extract SVG dimensions directly from the file.
+OctoberCMS automatically gets dimensions for raster images (JPG, PNG, GIF, WebP).
+However, SVG images do not store width/height in the database.
+This plugin provides runtime helpers to extract SVG dimensions directly from the file.
 
 
 ✨ Features
 ----------
 *   Reads width and height attributes from SVG files
 *   Fallback to viewBox when width/height are missing
-*   Does not modify system\_files
+*   Does not modify system_files
 *   Works with CMS, components, plugins, and Tailor
 *   Twig helpers:
-    *   svg\_dimensions(file)
-    *   image\_dimensions(file)
+    *   svg_dimensions(file)
+    *   image_dimensions(file)
 *   Lightweight and dependency-free
 
 📦 Installation
@@ -34,7 +34,7 @@ Copy the plugin to:
 
 ### Universal image dimensions (SVG + raster)
 ```
-{% set dims = image\_dimensions(record.icon) %}
+{% set dims = image_dimensions(record.icon) %}
 {% if dims %}
     {{ dims.width }} × {{ dims.height }}
 {% endif %}
@@ -42,7 +42,7 @@ Copy the plugin to:
 
 ### SVG-only dimensions
 ```
-{% set svg = svg\_dimensions(record.icon) %}
+{% set svg = svg_dimensions(record.icon) %}
 {% if svg %}
     {{ svg.width }} × {{ svg.height }}
 {% endif %}
@@ -74,7 +74,7 @@ fields:
 
 Twig:
 ```
-{% set dims = image\_dimensions(record.icon) %}
+{% set dims = image_dimensions(record.icon) %}
 {% if dims %}
     <span>{{ dims.width }} × {{ dims.height }}</span>
 {% endif %}
@@ -122,10 +122,9 @@ All at runtime.
 
 🔧 Twig Functions
 -----------------
-Function
-Description
-```svg\_dimensions(file)```   Returns dimensions for SVGs only
-```image\_dimensions(file)``` Returns dimensions for both SVG and raster
+Function | Description
+```svg_dimensions(file)```   Returns dimensions for SVGs only
+```image_dimensions(file)``` Returns dimensions for both SVG and raster
 
 ❗ Troubleshooting
 -----------------
