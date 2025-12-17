@@ -50,10 +50,10 @@ Copy the plugin to:
 
 ### Returned structure
 ```
-\[
+[
     "width"  => 120,
     "height" => 120
-\]
+]
 ```
 
 Returns null if no dimensions can be detected.
