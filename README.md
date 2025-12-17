@@ -74,6 +74,8 @@ Twig:
 
 📂 Directory Structure
 ----------------------
+
+```
 plugins/
 └─ depcore/
    └─ svgdimensions/
@@ -81,6 +83,8 @@ plugins/
       ├── composer.json
       ├── README.md
       └── CHANGELOG.md
+```
+
 * * *
 
 🔍 How It Works
