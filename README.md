@@ -27,28 +27,34 @@ composer require depcore/svgdimensions-plugin
 
 ### Manual
 Copy the plugin to:
-plugins/depcore/svgdimensions/
+```plugins/depcore/svgdimensions/```
 
 🧠 Usage
 --------
 
 ### Universal image dimensions (SVG + raster)
+```
 {% set dims = image\_dimensions(record.icon) %}
 {% if dims %}
     {{ dims.width }} × {{ dims.height }}
 {% endif %}
+```
 
 ### SVG-only dimensions
+```
 {% set svg = svg\_dimensions(record.icon) %}
 {% if svg %}
     {{ svg.width }} × {{ svg.height }}
 {% endif %}
+```
 
 ### Returned structure
+```
 \[
     "width"  => 120,
     "height" => 120
 \]
+```
 
 Returns null if no dimensions can be detected.
 
@@ -57,20 +63,22 @@ Returns null if no dimensions can be detected.
 
 Tailor blueprint:
 
+```
 fields:
     icon:
         label: Icon
         type: fileupload
         mode: image
         maxFiles: 1
+```
 
 Twig:
-
+```
 {% set dims = image\_dimensions(record.icon) %}
 {% if dims %}
     <span>{{ dims.width }} × {{ dims.height }}</span>
 {% endif %}
-
+```
 
 📂 Directory Structure
 ----------------------
@@ -116,10 +124,8 @@ All at runtime.
 -----------------
 Function
 Description
-svg\_dimensions(file)
-Returns dimensions for SVGs only
-image\_dimensions(file)
-Returns dimensions for both SVG and raster
+```svg\_dimensions(file)```   Returns dimensions for SVGs only
+```image\_dimensions(file)``` Returns dimensions for both SVG and raster
 
 ❗ Troubleshooting
 -----------------
@@ -129,7 +135,7 @@ Returns dimensions for both SVG and raster
 All dimensions are cast to integers.
  If needed in Twig:
 
-{{ dims.width|round(0) }}
+```{{ dims.width|round(0) }}```
 
 
 ### Returns null
